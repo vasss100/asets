@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="hyperBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1EEDFF" />
+      <stop offset="35%" stop-color="#0A96D6" />
+      <stop offset="70%" stop-color="#03548A" />
+      <stop offset="100%" stop-color="#002A4A" />
+    </linearGradient>
+
+    <linearGradient id="topGlassGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </linearGradient>
+
+    <linearGradient id="bottomReflex" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#99E1FF" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#99E1FF" stop-opacity="0.0" />
+    </linearGradient>
+
+    <filter id="hyperShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="8" flood-color="#000000" flood-opacity="0.55" />
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <rect x="15" y="15" width="170" height="170" rx="42" ry="42" fill="url(#hyperBlueGrad)" filter="url(#hyperShadow)" />
+
+  <rect x="16" y="16" width="168" height="168" rx="41" ry="41" fill="none" stroke="#001C3A" stroke-width="2.5" opacity="0.6" />
+
+  <rect x="18" y="18" width="164" height="164" rx="39" ry="39" fill="none" stroke="#85EDFF" stroke-width="1.5" stroke-opacity="0.5" />
+
+  <path d="M 18,50 
+           C 18,32 32,18 50,18 
+           L 150,18 
+           C 168,18 182,32 182,50 
+           C 140,68 60,72 18,50 Z" 
+        fill="url(#topGlassGlow)" />
+
+  <path d="M 22,145 
+           C 50,135 150,135 178,145 
+           C 174,165 160,178 142,178 
+           L 58,178 
+           C 40,178 26,165 22,145 Z" 
+        fill="url(#bottomReflex)" />
+
+  <ellipse cx="45" cy="35" rx="12" ry="6" fill="#FFFFFF" opacity="0.7" transform="rotate(-15 45 35)" />
+</svg>

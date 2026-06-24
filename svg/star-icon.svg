@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="glassStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF099" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#FFD21E" stop-opacity="0.75" />
+      <stop offset="80%" stop-color="#FF9F0A" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#FF5252" stop-opacity="0.95" />
+    </linearGradient>
+
+    <linearGradient id="starNeonBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stroke-opacity="0.9" />
+      <stop offset="30%" stop-color="#FFD21E" />
+      <stop offset="70%" stop-color="#FF6B00" />
+      <stop offset="100%" stop-color="#FF007F" />
+    </linearGradient>
+
+    <linearGradient id="innerShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </linearGradient>
+
+    <filter id="starShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#000000" flood-opacity="0.65" />
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#FF9F0A" flood-opacity="0.4" />
+    </filter>
+
+    <filter id="glassNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.12" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <circle cx="200" cy="195" r="90" fill="#FF9F0A" opacity="0.25" filter="blur(45px)" />
+
+  <g filter="url(#starShadow)">
+    
+    <polygon points="200,30 243,124 345,129 267,196 293,297 200,240 107,297 133,196 55,129 157,124" 
+             fill="url(#glassStarGrad)" stroke="url(#starNeonBorder)" stroke-width="4.5" stroke-linejoin="round" />
+
+    <polygon points="200,30 243,124 345,129 267,196 293,297 200,240 107,297 133,196 55,129 157,124" 
+             filter="url(#glassNoise)" opacity="0.4" pointer-events="none" />
+
+    <polygon points="200,36 240,126 337,131 263,195 287,290 200,245 113,290 137,195 63,131 160,126" 
+             fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-opacity="0.4" stroke-linejoin="round" />
+
+    <path d="M 90,148 
+             C 140,110 260,110 310,148 
+             C 270,180 130,180 90,148 Z" 
+          fill="url(#innerShine)" pointer-events="none" />
+          
+  </g>
+</svg>

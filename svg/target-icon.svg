@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" width="520" height="320">
+  <defs>
+    <linearGradient id="darkGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#16213e" stop-opacity="0.92" />
+      <stop offset="100%" stop-color="#0f0f23" stop-opacity="0.98" />
+    </linearGradient>
+
+    <linearGradient id="blueCyanBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff" />
+      <stop offset="50%" stop-color="#3a7bd5" />
+      <stop offset="100%" stop-color="#00d2ff" />
+    </linearGradient>
+
+    <linearGradient id="whiteCyanTextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#00d2ff" />
+      <stop offset="100%" stop-color="#3a7bd5" />
+    </linearGradient>
+
+    <filter id="deepShadowGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feDropShadow dx="0" dy="18" stdDeviation="15" flood-color="#000000" flood-opacity="0.85" />
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#00d2ff" flood-opacity="0.4" />
+    </filter>
+
+    <filter id="glassTexture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.1" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <circle cx="140" cy="160" r="90" fill="#00d2ff" opacity="0.2" filter="blur(50px)" />
+  <circle cx="380" cy="160" r="90" fill="#3a7bd5" opacity="0.15" filter="blur(50px)" />
+
+  <g filter="url(#deepShadowGlow)">
+    
+    <rect x="80" y="80" width="360" height="160" rx="80" ry="80" fill="url(#darkGlassGrad)" stroke="url(#blueCyanBorder)" stroke-width="4" />
+
+    <rect x="80" y="80" width="360" height="160" rx="80" ry="80" filter="url(#glassTexture)" opacity="0.35" pointer-events="none" />
+
+    <rect x="85" y="85" width="350" height="150" rx="75" ry="75" fill="none" stroke="#00d2ff" stroke-width="1" stroke-opacity="0.15" pointer-events="none" />
+
+    <g filter="drop-shadow(0px 4px 8px rgba(0,0,0,0.8))">
+      <text x="260" y="172" text-anchor="middle" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="65" fill="url(#whiteCyanTextGrad)" stroke="#FFFFFF" stroke-width="1" letter-spacing="2" text-rendering="geometricPrecision">TARGET</text>
+    </g>
+    
+  </g>
+</svg>

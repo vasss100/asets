@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 650" width="700" height="650">
+  <defs>
+    <linearGradient id="badgeGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.4" />
+      <stop offset="40%" stop-color="#1e40af" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+
+    <linearGradient id="neonGlowBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="60%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+
+    <filter id="premiumShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="25" stdDeviation="18" flood-color="#000000" flood-opacity="0.8" />
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#1e3a8a" flood-opacity="0.4" />
+    </filter>
+
+    <filter id="glassNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.1" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <circle cx="350" cy="320" r="180" fill="#1e40af" opacity="0.15" filter="blur(65px)" />
+
+  <g filter="url(#premiumShadow)">
+    
+    <rect x="230" y="50" width="240" height="110" rx="30" ry="30" fill="url(#badgeGlassGrad)" />
+    <rect x="230" y="50" width="240" height="110" rx="30" ry="30" fill="none" stroke="url(#neonGlowBorder)" stroke-width="3.5" />
+
+    <rect x="90" y="130" width="520" height="420" rx="55" ry="55" fill="url(#badgeGlassGrad)" />
+    <rect x="90" y="130" width="520" height="420" rx="55" ry="55" filter="url(#glassNoise)" opacity="0.35" />
+    <rect x="90" y="130" width="520" height="420" rx="55" ry="55" fill="none" stroke="url(#neonGlowBorder)" stroke-width="5" />
+
+    <g transform="translate(145, 435)" filter="drop-shadow(0px 4px 6px rgba(0,0,0,0.6))">
+      <polygon points="40,5 52,32 80,32 58,48 66,75 40,58 14,75 22,48 0,32 28,32" fill="#1e3a8a" stroke="#1d4ed8" stroke-width="2.5" stroke-linejoin="round"/>
+    </g>
+
+    <g transform="translate(310, 425)" filter="drop-shadow(0px 5px 8px rgba(0,0,0,0.6))">
+      <polygon points="40,2 53,30 82,30 59,47 67,75 40,57 13,75 21,47 -2,30 27,30" fill="#1d4ed8" stroke="#3b82f6" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+
+    <g transform="translate(475, 435)" filter="drop-shadow(0px 4px 6px rgba(0,0,0,0.6))">
+      <polygon points="40,5 52,32 80,32 58,48 66,75 40,58 14,75 22,48 0,32 28,32" fill="#1e3a8a" stroke="#1d4ed8" stroke-width="2.5" stroke-linejoin="round"/>
+    </g>
+
+  </g>
+</svg>

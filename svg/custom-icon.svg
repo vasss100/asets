@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" width="520" height="320">
+  <defs>
+    <linearGradient id="redGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF1E27" stop-opacity="0.65" />
+      <stop offset="40%" stop-color="#C10909" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#3A0007" stop-opacity="0.98" />
+    </linearGradient>
+
+    <linearGradient id="redNeonBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5C5C" />
+      <stop offset="50%" stop-color="#E21D1D" />
+      <stop offset="100%" stop-color="#990000" />
+    </linearGradient>
+
+    <linearGradient id="topShineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </linearGradient>
+
+    <filter id="redGlowShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="15" flood-color="#000000" flood-opacity="0.75" />
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#E21D1D" flood-opacity="0.5" />
+    </filter>
+
+    <filter id="glassNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.12" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <ellipse cx="260" cy="160" rx="170" ry="75" fill="#E21D1D" opacity="0.2" filter="blur(50px)" />
+
+  <g filter="url(#redGlowShadow)">
+    <rect x="80" y="80" width="360" height="160" rx="80" ry="80" fill="url(#redGlassGrad)" stroke="url(#redNeonBorder)" stroke-width="5" />
+    <rect x="80" y="80" width="360" height="160" rx="80" ry="80" filter="url(#glassNoise)" opacity="0.4" pointer-events="none" />
+    <rect x="86" y="86" width="348" height="148" rx="74" ry="74" fill="none" stroke="#FF8E8E" stroke-width="1.5" stroke-opacity="0.25" pointer-events="none" />
+    <path d="M 110,110 
+             C 160,86 360,86 410,110 
+             C 350,135 170,135 110,110 Z" 
+          fill="url(#topShineGrad)" pointer-events="none" />
+  </g>
+</svg>

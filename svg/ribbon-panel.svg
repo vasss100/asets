@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B1B54" stop-opacity="0.85"/>
+      <stop offset="40%" stop-color="#140D2B" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#070314" stop-opacity="0.98"/>
+    </linearGradient>
+
+    <linearGradient id="edgeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FFFF"/>
+      <stop offset="50%" stop-color="#8A2BE2"/>
+      <stop offset="100%" stop-color="#FF007F"/>
+    </linearGradient>
+
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE259"/>
+      <stop offset="50%" stop-color="#FFBA42"/>
+      <stop offset="100%" stop-color="#D67A0A"/>
+    </linearGradient>
+
+    <linearGradient id="glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.12"/>
+      </feComponentTransfer>
+    </filter>
+
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="20" stdDeviation="15" flood-color="#000000" flood-opacity="0.65"/>
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#8A2BE2" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="inner" x="-20%" y="-20%" width="140%" height="140%">
+      <feOffset dy="5"/>
+      <feGaussianBlur stdDeviation="8" result="offset-blur"/>
+      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+      <feFlood flood-color="#000000" flood-opacity="0.6" result="color"/>
+      <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+      <feComposite operator="over" in="shadow" in2="SourceGraphic"/>
+    </filter>
+
+    <symbol id="star" viewBox="0 0 100 100">
+      <path d="M50 5 L61 38 L95 38 L67 58 L78 91 L50 72 L22 91 L33 58 L5 38 L39 38 Z"/>
+    </symbol>
+
+    <mask id="cut">
+      <rect width="100%" height="100%" fill="white"/>
+      <use href="#star" x="250" y="240" width="80" height="80" fill="black"/>
+      <use href="#star" x="360" y="240" width="80" height="80" fill="black"/>
+      <use href="#star" x="470" y="240" width="80" height="80" fill="black"/>
+    </mask>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <rect x="150" y="120" width="500" height="320" rx="42" ry="42" fill="url(#panelGrad)" mask="url(#cut)"/>
+
+    <rect x="150" y="120" width="500" height="320" rx="42" ry="42" filter="url(#noise)" opacity="0.3" mask="url(#cut)"/>
+
+    <rect x="150" y="120" width="500" height="320" rx="42" ry="42" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.15" mask="url(#cut)" filter="url(#inner)"/>
+
+    <rect x="151" y="121" width="498" height="318" rx="41" ry="41" fill="none" stroke="url(#edgeGlow)" stroke-width="2.5" opacity="0.75" mask="url(#cut)"/>
+
+    <path d="M 152,180 
+             C 152,140 200,121 250,121 
+             L 550,121 
+             C 600,121 648,140 648,180 
+             C 500,210 300,210 152,180 Z" 
+        fill="url(#glass)" opacity="0.45" mask="url(#cut)" />
+        
+    <path d="M 180,390 C 300,375 500,375 620,390" fill="none" stroke="#FF007F" stroke-width="8" opacity="0.2" filter="blur(6px)" mask="url(#cut)" />
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M 220,130 L 190,150 L 220,150 Z" fill="#7A4200" />
+    <path d="M 580,130 L 610,150 L 580,150 Z" fill="#7A4200" />
+
+    <path d="M 220,60 L 175,95 L 220,130 Z" fill="#B56600"/>
+    <path d="M 580,60 L 625,95 L 580,130 Z" fill="#B56600"/>
+
+    <rect x="210" y="60" width="380" height="75" rx="20" ry="20" fill="url(#ribbonGrad)"/>
+    
+    <rect x="212" y="62" width="376" height="71" rx="18" ry="18" fill="none" stroke="#FFF5C2" stroke-width="1.5" stroke-opacity="0.6" />
+
+    <path d="M 212,95 C 212,75 230,62 250,62 L 550,62 C 570,62 588,75 588,95 C 500,105 300,105 212,95 Z" fill="url(#glass)" opacity="0.35" />
+  </g>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" width="700" height="500">
+  <defs>
+    <linearGradient id="visibleGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28" />
+      <stop offset="50%" stop-color="#1e1b4b" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.92" />
+    </linearGradient>
+
+    <linearGradient id="innerTint" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#090514" stop-opacity="0.8" />
+    </linearGradient>
+
+    <linearGradient id="strongNeonBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="25%" stop-color="#00FFFF" />
+      <stop offset="75%" stop-color="#8A2BE2" />
+      <stop offset="100%" stop-color="#FF007F" />
+    </linearGradient>
+
+    <filter id="heavyShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="25" stdDeviation="20" flood-color="#000000" flood-opacity="0.85" />
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#8A2BE2" flood-opacity="0.5" />
+    </filter>
+
+    <filter id="glassNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.15" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <circle cx="200" cy="150" r="150" fill="#00FFFF" opacity="0.2" filter="blur(60px)" />
+  <circle cx="500" cy="350" r="160" fill="#FF007F" opacity="0.18" filter="blur(70px)" />
+
+  <g filter="url(#heavyShadow)">
+    <rect x="70" y="60" width="560" height="380" rx="42" ry="42" fill="url(#visibleGlassGrad)" />
+
+    <rect x="70" y="60" width="560" height="380" rx="42" ry="42" fill="url(#innerTint)" />
+
+    <rect x="70" y="60" width="560" height="380" rx="42" ry="42" filter="url(#glassNoise)" opacity="0.45" />
+
+    <rect x="73" y="63" width="554" height="374" rx="39" ry="39" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-opacity="0.35" />
+
+    <rect x="70" y="60" width="560" height="380" rx="42" ry="42" fill="none" stroke="url(#strongNeonBorder)" stroke-width="3" />
+
+    <path d="M 120,437 C 250,415 450,415 580,437" fill="none" stroke="#00FFFF" stroke-width="4" stroke-opacity="0.5" filter="blur(2px)" />
+  </g>
+
+  <g transform="translate(585, 42)" filter="drop-shadow(0px 6px 10px rgba(0,0,0,0.6))">
+    <circle cx="20" cy="20" r="23" fill="#090514" stroke="url(#strongNeonBorder)" stroke-width="2.5" />
+    <circle cx="20" cy="20" r="19" fill="#1e1b4b" opacity="0.8" />
+  </g>
+</svg>
